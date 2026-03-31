@@ -16,4 +16,34 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overscroll-behavior: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Prevent iOS bounce scroll */
+html, body {
+  height: 100%;
+  overflow: hidden;
+}
+
+#root {
+  height: 100%;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Improve touch targets for BlockNote on mobile */
+@media (max-width: 767px) {
+  .bn-side-menu {
+    gap: 2px;
+  }
+
+  .bn-side-menu button {
+    min-width: 28px;
+    min-height: 28px;
+  }
+
+  .bn-slash-menu {
+    max-height: 50vh;
+  }
 }

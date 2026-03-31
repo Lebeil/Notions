@@ -47,7 +47,8 @@ function AppContent({
     getAncestors,
   } = usePages();
 
-  const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+  // Sidebar collapsed by default on mobile
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(window.innerWidth < 768);
   const collab = useCollaboration(activePageId, userName);
 
   if (loading) {
@@ -77,7 +78,7 @@ function AppContent({
       {sidebarCollapsed && (
         <button
           onClick={() => setSidebarCollapsed(false)}
-          className="fixed top-3 left-3 z-10 w-8 h-8 flex items-center justify-center rounded-md text-gray-400 hover:bg-gray-100 hover:text-gray-600 transition-colors"
+          className="fixed top-3 left-3 z-10 w-10 h-10 md:w-8 md:h-8 flex items-center justify-center rounded-md text-gray-400 hover:bg-gray-100 hover:text-gray-600 transition-colors"
           title="Ouvrir la sidebar"
         >
           <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
@@ -88,10 +89,10 @@ function AppContent({
 
       <main
         className={`transition-all duration-200 ${
-          sidebarCollapsed ? "ml-0" : "ml-60"
+          sidebarCollapsed ? "ml-0" : "md:ml-60"
         }`}
       >
-        <div className="mx-auto max-w-3xl px-4 py-8 sm:px-6">
+        <div className="mx-auto max-w-3xl px-3 py-6 sm:px-6 sm:py-8">
           <Breadcrumb
             ancestors={ancestors}
             currentPage={activePage}

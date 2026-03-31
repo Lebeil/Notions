@@ -63,16 +63,16 @@ function PageItem({
   return (
     <div>
       <div
-        className={`group flex items-center gap-1 rounded-md px-2 py-1 text-sm cursor-pointer transition-colors ${
+        className={`group flex items-center gap-1 rounded-md px-2 py-2.5 md:py-1.5 text-sm cursor-pointer transition-colors ${
           isActive
             ? "bg-gray-100 text-gray-900 font-medium"
-            : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
+            : "text-gray-600 hover:bg-gray-50 hover:text-gray-900 active:bg-gray-100"
         }`}
         style={{ paddingLeft: `${depth * 16 + 8}px` }}
         onClick={() => onSelect(page.id)}
       >
         <button
-          className={`flex-shrink-0 w-4 h-4 flex items-center justify-center rounded text-gray-400 hover:text-gray-600 ${
+          className={`flex-shrink-0 w-7 h-7 md:w-4 md:h-4 flex items-center justify-center rounded text-gray-400 hover:text-gray-600 ${
             hasChildren ? "visible" : "invisible"
           }`}
           onClick={(e) => {
@@ -93,9 +93,9 @@ function PageItem({
 
         <span className="flex-1 truncate">{page.title}</span>
 
-        <div className="flex gap-0.5 opacity-0 group-hover:opacity-100 transition-opacity">
+        <div className="flex gap-0.5 md:opacity-0 md:group-hover:opacity-100 transition-opacity">
           <button
-            className="w-5 h-5 flex items-center justify-center rounded text-gray-400 hover:bg-gray-200 hover:text-gray-600"
+            className="w-8 h-8 md:w-5 md:h-5 flex items-center justify-center rounded text-gray-400 hover:bg-gray-200 hover:text-gray-600 active:bg-gray-300"
             onClick={(e) => {
               e.stopPropagation();
               onCreate(page.id);
