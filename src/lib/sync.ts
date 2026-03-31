@@ -20,6 +20,10 @@ export async function pullFromSupabase(): Promise<void> {
     content: row.content,
     parentId: row.parent_id,
     order: row.order,
+    icon: row.icon || "",
+    favorite: row.favorite || false,
+    deleted: row.deleted || false,
+    shareToken: row.share_token || null,
     createdAt: new Date(row.created_at).getTime(),
     updatedAt: new Date(row.updated_at).getTime(),
   }));
@@ -46,6 +50,10 @@ export async function pushToSupabase(): Promise<void> {
     content: p.content,
     parent_id: p.parentId,
     order: p.order,
+    icon: p.icon || "",
+    favorite: p.favorite || false,
+    deleted: p.deleted || false,
+    share_token: p.shareToken || null,
     created_at: new Date(p.createdAt).toISOString(),
     updated_at: new Date(p.updatedAt).toISOString(),
   }));

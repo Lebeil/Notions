@@ -64,6 +64,10 @@ export function BlockEditor({
   };
 
   return (
-    <BlockNoteView editor={editor} onChange={handleChange} theme="light" />
+    <BlockNoteView
+      editor={editor}
+      onChange={handleChange}
+      theme={document.documentElement.classList.contains("dark") ? "dark" : "light"}
+    />
   );
 }
