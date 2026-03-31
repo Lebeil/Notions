@@ -55,7 +55,7 @@ export function BlockEditor({
       (!doc[0].content || (Array.isArray(doc[0].content) && doc[0].content.length === 0));
 
     if (isEmpty) {
-      editor.replaceBlocks(editor.document, DEFAULT_CONTENT);
+      editor.replaceBlocks(editor.document, DEFAULT_CONTENT as any);
     }
   }, [editor, collaboration]);
 
