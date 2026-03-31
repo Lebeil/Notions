@@ -44,12 +44,10 @@ export function BlockEditor({
       : { initialContent: initialContent ?? DEFAULT_CONTENT }
   );
 
-  // When collaboration is active and the doc is empty, insert a H1
   useEffect(() => {
     if (!collaboration || hasInitialized.current) return;
     hasInitialized.current = true;
 
-    // Check if the editor only has one empty paragraph (default state)
     const doc = editor.document;
     const isEmpty =
       doc.length === 1 &&
