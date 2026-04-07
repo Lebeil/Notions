@@ -29,7 +29,7 @@
     "tailwind-merge": "^3.5.0",
     "tailwindcss": "^4.2.2",
     "typescript": "^6.0.2",
-    "vite": "^6.4.1",
+    "vite": "^6.4.2",
     "y-indexeddb": "^9.0.12",
     "yjs": "^13.6.30"
   }
